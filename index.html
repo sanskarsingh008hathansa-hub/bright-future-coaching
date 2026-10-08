@@ -444,8 +444,64 @@
     </div>
 
   </section>
+<!-- ENQUIRY FORM -->
+<section class="section" id="enquiry">
 
+  <h2 class="section-title">
+    Admission Enquiry
+  </h2>
 
+  <p class="section-subtitle">
+    Admission से जुड़ी जानकारी के लिए नीचे अपना विवरण भरें।
+  </p>
+
+  <form
+    onsubmit="sendEnquiry(event)"
+    style="max-width:600px;margin:auto;background:white;padding:30px;border-radius:15px;box-shadow:0 5px 20px rgba(0,0,0,0.08);"
+  >
+
+    <input
+      type="text"
+      id="studentName"
+      placeholder="Student Name"
+      required
+      style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:8px;"
+    >
+
+    <input
+      type="tel"
+      id="studentPhone"
+      placeholder="Mobile Number"
+      required
+      style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:8px;"
+    >
+
+    <input
+      type="text"
+      id="studentCourse"
+      placeholder="Class / Course"
+      required
+      style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:8px;"
+    >
+
+    <textarea
+      id="studentMessage"
+      placeholder="आप क्या जानना चाहते हैं?"
+      rows="4"
+      style="width:100%;padding:14px;margin-bottom:15px;border:1px solid #ddd;border-radius:8px;"
+    ></textarea>
+
+    <button
+      type="submit"
+      class="btn"
+      style="border:none;cursor:pointer;"
+    >
+      Submit Enquiry
+    </button>
+
+  </form>
+
+</section>
   <!-- CONTACT -->
   <section class="contact" id="contact">
 
@@ -477,6 +533,29 @@
     All Rights Reserved.
 
   </footer>
+<script>
+function sendEnquiry(event) {
+  event.preventDefault();
 
+  const name = document.getElementById("studentName").value;
+  const phone = document.getElementById("studentPhone").value;
+  const course = document.getElementById("studentCourse").value;
+  const message = document.getElementById("studentMessage").value;
+
+  const whatsappNumber = "919999999999";
+
+  const text =
+    "🎓 New Admission Enquiry%0A%0A" +
+    "Name: " + encodeURIComponent(name) + "%0A" +
+    "Mobile: " + encodeURIComponent(phone) + "%0A" +
+    "Course: " + encodeURIComponent(course) + "%0A" +
+    "Message: " + encodeURIComponent(message);
+
+  window.open(
+    "https://wa.me/" + whatsappNumber + "?text=" + text,
+    "_blank"
+  );
+}
+</script>
 </body>
 </html>
