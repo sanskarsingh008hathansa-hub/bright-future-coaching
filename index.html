@@ -558,5 +558,87 @@ function sendEnquiry(event) {
   );
 }
 </script>
+<!-- AI CHATBOT -->
+<div id="chatbot-button" onclick="toggleChat()">
+  🤖
+</div>
+
+<div id="chatbot-box">
+
+  <div id="chatbot-header">
+    Bright Future AI
+    <span onclick="toggleChat()">✕</span>
+  </div>
+
+  <div id="chatbot-messages">
+    <div class="bot-message">
+      नमस्ते! 👋 Bright Future Coaching में आपका स्वागत है।<br>
+      आप admission, courses या fees के बारे में पूछ सकते हैं।
+    </div>
+  </div>
+
+  <div id="chatbot-input">
+    <input
+      type="text"
+      id="userMessage"
+      placeholder="अपना सवाल लिखें..."
+      onkeydown="if(event.key==='Enter') sendMessage()"
+    >
+    <button onclick="sendMessage()">Send</button>
+  </div>
+
+</div>
+
+<script>
+function toggleChat() {
+  const box = document.getElementById("chatbot-box");
+
+  if (box.style.display === "flex") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "flex";
+  }
+}
+
+function sendMessage() {
+  const input = document.getElementById("userMessage");
+  const message = input.value.trim();
+
+  if (message === "") return;
+
+  const messages = document.getElementById("chatbot-messages");
+
+  messages.innerHTML +=
+    '<div class="user-message">' +
+    message +
+    '</div>';
+
+  let reply =
+    "धन्यवाद! 😊 Admission, courses और fees की जानकारी के लिए आप हमसे WhatsApp पर संपर्क कर सकते हैं।";
+
+  if (message.toLowerCase().includes("fee") ||
+      message.includes("फीस")) {
+    reply = "Fees की जानकारी के लिए कृपया coaching institute से संपर्क करें।";
+  }
+
+  if (message.toLowerCase().includes("course") ||
+      message.includes("कोर्स")) {
+    reply = "हमारे available courses की जानकारी के लिए Courses section देखें।";
+  }
+
+  if (message.toLowerCase().includes("admission") ||
+      message.includes("एडमिशन")) {
+    reply = "Admission के लिए नीचे दिए गए Admission Enquiry form को भरें।";
+  }
+
+  messages.innerHTML +=
+    '<div class="bot-message">' +
+    reply +
+    '</div>';
+
+  input.value = "";
+  messages.scrollTop = messages.scrollHeight;
+}
+</script>
 </body>
 </html>
