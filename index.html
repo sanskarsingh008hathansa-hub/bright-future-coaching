@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Bright Future Coaching Institute</title>
 
   <style>
@@ -13,119 +14,267 @@
       font-family: Arial, sans-serif;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      background: #f5f7fb;
-      color: #222;
+      background: #f7f9fc;
+      color: #1f2937;
+      line-height: 1.6;
     }
 
-    header {
-      background: #173b8f;
-      color: white;
-      padding: 20px;
-      text-align: center;
+    /* NAVBAR */
+    nav {
+      background: #ffffff;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
 
-    header h1 {
-      font-size: 28px;
-      margin-bottom: 8px;
-    }
-
-    header p {
-      font-size: 15px;
-    }
-
-    .hero {
-      padding: 60px 20px;
-      text-align: center;
-      background: white;
-    }
-
-    .hero h2 {
-      font-size: 34px;
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
       color: #173b8f;
-      margin-bottom: 15px;
+    }
+
+    .logo span {
+      color: #ff7a00;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 20px;
+      font-weight: 600;
+    }
+
+    /* HERO */
+    .hero {
+      background: linear-gradient(135deg, #173b8f, #2858c7);
+      color: white;
+      padding: 90px 7%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .hero-content {
+      max-width: 650px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #ffd166;
     }
 
     .hero p {
-      max-width: 650px;
-      margin: auto;
-      font-size: 18px;
-      line-height: 1.6;
-      color: #555;
+      font-size: 19px;
+      margin-bottom: 30px;
+      color: #e8edff;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 25px;
-      padding: 14px 25px;
       background: #ff7a00;
       color: white;
-      text-decoration: none;
+      padding: 14px 24px;
       border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
+      margin-right: 10px;
     }
 
-    .section {
-      padding: 45px 20px;
+    .btn.secondary {
+      background: white;
+      color: #173b8f;
+    }
+
+    /* STATS */
+    .stats {
+      background: white;
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      padding: 30px 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.06);
       text-align: center;
     }
 
-    .section h2 {
+    .stat h2 {
       color: #173b8f;
-      margin-bottom: 25px;
+      font-size: 28px;
     }
 
+    .stat p {
+      color: #666;
+    }
+
+    /* SECTION */
+    .section {
+      padding: 75px 7%;
+      text-align: center;
+    }
+
+    .section-title {
+      font-size: 34px;
+      color: #173b8f;
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      color: #666;
+      max-width: 650px;
+      margin: 0 auto 40px;
+    }
+
+    /* COURSES */
     .cards {
       display: flex;
       justify-content: center;
-      gap: 20px;
+      gap: 25px;
       flex-wrap: wrap;
     }
 
     .card {
       background: white;
-      width: 280px;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+      width: 300px;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      text-align: left;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+    }
+
+    .card-icon {
+      font-size: 38px;
+      margin-bottom: 15px;
     }
 
     .card h3 {
       color: #173b8f;
       margin-bottom: 10px;
+      font-size: 21px;
     }
 
     .card p {
       color: #666;
-      line-height: 1.5;
     }
 
+    /* WHY US */
+    .why {
+      background: #eef3ff;
+    }
+
+    .why-list {
+      max-width: 800px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .why-item {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: left;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+    }
+
+    .why-item strong {
+      color: #173b8f;
+    }
+
+    /* CONTACT */
     .contact {
       background: #173b8f;
       color: white;
-      padding: 45px 20px;
       text-align: center;
+      padding: 70px 20px;
     }
 
     .contact h2 {
+      font-size: 36px;
       margin-bottom: 15px;
     }
 
+    .contact p {
+      margin-bottom: 25px;
+      color: #e5eaff;
+    }
+
+    /* FOOTER */
     footer {
       background: #10275f;
       color: white;
       text-align: center;
-      padding: 15px;
+      padding: 22px;
       font-size: 14px;
     }
 
-    @media (max-width: 600px) {
-      .hero h2 {
-        font-size: 27px;
+    /* MOBILE */
+    @media (max-width: 700px) {
+
+      nav {
+        padding: 15px 5%;
+      }
+
+      nav div:last-child {
+        display: none;
+      }
+
+      .hero {
+        padding: 65px 6%;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 35px;
       }
 
       .hero p {
         font-size: 16px;
+      }
+
+      .stats {
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .stat {
+        min-width: 100px;
+      }
+
+      .why-list {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 55px 6%;
+      }
+
+      .section-title {
+        font-size: 28px;
+      }
+
+      .btn {
+        margin-bottom: 10px;
       }
     }
   </style>
@@ -133,63 +282,200 @@
 
 <body>
 
-  <header>
-    <h1>Bright Future Coaching Institute</h1>
-    <p>आपके बेहतर भविष्य की मजबूत शुरुआत</p>
-  </header>
+  <!-- NAVBAR -->
+  <nav>
+    <div class="logo">
+      Bright <span>Future</span>
+    </div>
 
-  <section class="hero">
-    <h2>अपने सपनों को सफलता में बदलें</h2>
+    <div>
+      <a href="#home">Home</a>
+      <a href="#courses">Courses</a>
+      <a href="#about">Why Us</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
 
-    <p>
-      Bright Future Coaching Institute में विद्यार्थियों को
-      बेहतर मार्गदर्शन, गुणवत्तापूर्ण शिक्षा और सफलता की सही दिशा
-      देने का प्रयास किया जाता है।
-    </p>
 
-    <a href="#contact" class="btn">Admission Enquiry</a>
+  <!-- HERO -->
+  <section class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>
+        अपने सपनों को
+        <span>सफलता</span> में बदलें
+      </h1>
+
+      <p>
+        Bright Future Coaching Institute में
+        विद्यार्थियों को बेहतर शिक्षा, सही मार्गदर्शन
+        और अपने लक्ष्य तक पहुँचने की दिशा दी जाती है।
+      </p>
+
+      <a href="#contact" class="btn">
+        Admission Enquiry
+      </a>
+
+      <a href="#courses" class="btn secondary">
+        Explore Courses
+      </a>
+
+    </div>
+
   </section>
 
-  <section class="section">
-    <h2>हमारे Courses</h2>
+
+  <!-- STATS -->
+  <section class="stats">
+
+    <div class="stat">
+      <h2>500+</h2>
+      <p>Students</p>
+    </div>
+
+    <div class="stat">
+      <h2>10+</h2>
+      <p>Expert Teachers</p>
+    </div>
+
+    <div class="stat">
+      <h2>95%</h2>
+      <p>Success Rate</p>
+    </div>
+
+  </section>
+
+
+  <!-- COURSES -->
+  <section class="section" id="courses">
+
+    <h2 class="section-title">
+      हमारे Courses
+    </h2>
+
+    <p class="section-subtitle">
+      आपकी पढ़ाई और भविष्य के लक्ष्य के अनुसार
+      बेहतर learning programs.
+    </p>
 
     <div class="cards">
 
       <div class="card">
+
+        <div class="card-icon">📚</div>
+
         <h3>Class 9–10</h3>
+
         <p>
-          विद्यार्थियों के लिए मजबूत बेसिक और परीक्षा की तैयारी।
+          मजबूत fundamentals, नियमित practice
+          और परीक्षा की बेहतर तैयारी।
         </p>
+
       </div>
 
+
       <div class="card">
+
+        <div class="card-icon">🎓</div>
+
         <h3>Class 11–12</h3>
+
         <p>
-          बोर्ड परीक्षा और आगे की पढ़ाई के लिए बेहतर मार्गदर्शन।
+          Board exams और आगे की पढ़ाई के लिए
+          focused preparation और guidance।
         </p>
+
       </div>
 
+
       <div class="card">
+
+        <div class="card-icon">🏆</div>
+
         <h3>Competitive Exams</h3>
+
         <p>
-          प्रतियोगी परीक्षाओं की तैयारी के लिए विशेष guidance।
+          प्रतियोगी परीक्षाओं के लिए structured
+          preparation और सही strategy।
         </p>
+
       </div>
 
     </div>
+
   </section>
 
+
+  <!-- WHY US -->
+  <section class="section why" id="about">
+
+    <h2 class="section-title">
+      हमें क्यों चुनें?
+    </h2>
+
+    <p class="section-subtitle">
+      विद्यार्थियों को बेहतर learning experience देने
+      के लिए हमारा focus इन चीजों पर है।
+    </p>
+
+    <div class="why-list">
+
+      <div class="why-item">
+        ✅ <strong>Experienced Teachers</strong><br>
+        अनुभवी शिक्षकों द्वारा मार्गदर्शन।
+      </div>
+
+      <div class="why-item">
+        ✅ <strong>Regular Tests</strong><br>
+        नियमित tests और performance tracking।
+      </div>
+
+      <div class="why-item">
+        ✅ <strong>Personal Guidance</strong><br>
+        विद्यार्थियों की जरूरत के अनुसार guidance।
+      </div>
+
+      <div class="why-item">
+        ✅ <strong>Career Focus</strong><br>
+        पढ़ाई के साथ future planning पर focus।
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
   <section class="contact" id="contact">
-    <h2>Admission Enquiry</h2>
-    <p>आज ही हमसे संपर्क करें और अपने भविष्य की शुरुआत करें।</p>
+
+    <h2>
+      Admission शुरू करें
+    </h2>
+
+    <p>
+      अपने भविष्य की बेहतर शुरुआत के लिए
+      आज ही हमसे संपर्क करें।
+    </p>
 
     <a href="tel:+919999999999" class="btn">
-      Call Now
+      📞 Call Now
     </a>
+
+    <a href="https://wa.me/919999999999" class="btn">
+      💬 WhatsApp
+    </a>
+
   </section>
 
+
+  <!-- FOOTER -->
   <footer>
+
     © 2026 Bright Future Coaching Institute
+    <br>
+    All Rights Reserved.
+
   </footer>
 
 </body>
